@@ -1,0 +1,17 @@
+ 
+service: api
+ 
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+
+functions:
+  bot:
+    handler: handler.handler
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
